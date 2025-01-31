@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:XNQJ84BbUlCLDhww@inanely-changeable-chub.data-1.use1.tembo.io:5432/postgres"
+}
+
+model Produto {
+  id          Int      @id @default(autoincrement())
+  nome        String
+  classe      String
+  valor       Float
+  descricao   String?
+  foto        Bytes?
+  dataCriacao DateTime @default(now())
+  dataAtualizacao DateTime @updatedAt
+}
